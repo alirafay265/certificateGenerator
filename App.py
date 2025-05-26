@@ -44,6 +44,11 @@ SENDER_EMAIL = os.getenv("SENDER_EMAIL")
 SENDER_NAME = os.getenv("SENDER_NAME")
 SENDER_PASSWORD = os.getenv("SENDER_PASSWORD")
 
+# Ensure all required environment variables are set
+if not CIRCLE_API_KEY or not SENDER_EMAIL or not SENDER_PASSWORD:
+    raise EnvironmentError("Missing required environment variables: CIRCLE_API_KEY, SENDER_EMAIL, or SENDER_PASSWORD.")
+
+
 app = Flask(__name__)
 
 # CIRCLE_API_KEY = "bvhns1fyFLHxqiczrsxbWyKanUfmuPDA"
