@@ -35,13 +35,18 @@ date_of_completion = f"{day}{suffix} {month} {year}"
 
 SMTP_SERVER = "smtp.gmail.com" #If you are using a gmail provided email service
 SMTP_PORT = 587
-SENDER_EMAIL = "alirafay121457@gmail.com" # your email
-SENDER_NAME = "Kamyabi Network" # your name
-SENDER_PASSWORD = "mrki nykv zjwu oeqr"  # Use App Password (generated through email account), not your Gmail password
+# SENDER_EMAIL = "alirafay121457@gmail.com" # your email
+# SENDER_NAME = "Kamyabi Network" # your name
+# SENDER_PASSWORD = "mrki nykv zjwu oeqr"  # Use App Password (generated through email account), not your Gmail password
+
+CIRCLE_API_KEY = os.getenv("CIRCLE_API_KEY")
+SENDER_EMAIL = os.getenv("SENDER_EMAIL")
+SENDER_NAME = os.getenv("SENDER_NAME")
+SENDER_PASSWORD = os.getenv("SENDER_PASSWORD")
 
 app = Flask(__name__)
 
-CIRCLE_API_KEY = "bvhns1fyFLHxqiczrsxbWyKanUfmuPDA"
+# CIRCLE_API_KEY = "bvhns1fyFLHxqiczrsxbWyKanUfmuPDA"
 TEMPLATE_PATH = "template/template1.png"
 CERTIFICATE_DIR = "certificate/"
 NAME_FONT_PATH = "fonts/WhisperingSignature.ttf"
