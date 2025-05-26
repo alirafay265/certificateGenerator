@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: certificate-generator
+    env: python
+    region: frankfurt  # or use "frankfurt" or "singapore" if closer to your users
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: PORT
+        value: 10000  # optional override, Flask listens on PORT Render assigns
