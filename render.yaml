@@ -5,7 +5,7 @@ services:
     region: frankfurt  # or use "frankfurt" or "singapore" if closer to your users
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn App:app
     envVars:
       - key: FLASK_ENV
         value: production
